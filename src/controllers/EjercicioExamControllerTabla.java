@@ -83,6 +83,10 @@ public class EjercicioExamControllerTabla implements Initializable{
 	
 	private ProductoDao aD;
 	
+	public ProductoDao getaD() {
+		return aD;
+	}
+
 	private ObservableList<Producto> o1;
 	
 	private InputStream imageBinary = null;

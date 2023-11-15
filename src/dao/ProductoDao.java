@@ -59,7 +59,7 @@ public class ProductoDao {
     	//Eliminar objeto en la BBDD
     	try {
             conexion = new ConexionBD();        	
-            String consulta = "DELETE FROM examen1.productos WHERE codigo = "+codigo;
+            String consulta = "DELETE FROM examen1.productos WHERE codigo = '"+codigo+"'";
         	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);  
 			pstmt.execute();
 	        conexion.CloseConexion();
@@ -72,7 +72,7 @@ public class ProductoDao {
 		InputStream image = null;
 		try {
             conexion = new ConexionBD();        	
-        	String consulta = "select imagen from productos WHERE codigo = "+codigo;
+        	String consulta = "select imagen from productos WHERE codigo = '"+codigo+"'";
         	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);      
         	ResultSet rs = pstmt.executeQuery();   
         	rs.next();

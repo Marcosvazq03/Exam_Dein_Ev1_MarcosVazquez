@@ -33,7 +33,7 @@ public class EjercicioExamControllerImagen implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
     	if (ejExamController!=null) {
     		if(ejExamController.getTbProducto().getSelectionModel().getSelectedItem().getImage() != null) {
-		 		verImg.setImage(new Image(ejExamController.getTbProducto().getSelectionModel().getSelectedItem().getImage()));
+		 		verImg.setImage(new Image(ejExamController.getaD().cargarImg(ejExamController.getTbProducto().getSelectionModel().getSelectedItem().getCodigo())));
 		 	}
 		}
     }
