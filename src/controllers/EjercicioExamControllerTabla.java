@@ -91,7 +91,15 @@ public class EjercicioExamControllerTabla implements Initializable{
 		return tbProducto;
 	}
 
-
+ 	/**
+ 	 * Crear Producto
+ 	 * @param codigo
+ 	 * @param nombre
+ 	 * @param precio
+ 	 * @param disponible
+ 	 * @param imagen
+ 	 * @return
+ 	 */
 	public boolean crearProducto(String codigo, String nombre, Double precio, int disponible, InputStream imagen) {
  		Producto p = new Producto(codigo, nombre, precio, disponible, imagen);
  		boolean esta=false;
@@ -112,7 +120,14 @@ public class EjercicioExamControllerTabla implements Initializable{
  		}
     }
  	
-     
+     /**
+      * Modificar Producto
+      * @param codigo
+      * @param nombre
+      * @param precio
+      * @param disponible
+      * @param imagen
+      */
 	 public void modificarProducto(String codigo, String nombre, Double precio, int disponible, InputStream imagen) {
 	 	//Modificar objeto de la tabla
 	 	Producto p = new Producto(codigo, nombre, precio, disponible, imagen);
@@ -124,6 +139,10 @@ public class EjercicioExamControllerTabla implements Initializable{
 		}
 	 }
 
+	 /**
+	  * Seleccionar imagen
+	  * @return
+	  */
      protected InputStream seleccionarImagen() {
      	InputStream imageBinary = null;
      	FileChooser fileChooser = new FileChooser();
@@ -148,6 +167,10 @@ public class EjercicioExamControllerTabla implements Initializable{
      	return imageBinary;
      }
      
+     /**
+      * Mostrar datos del Producto seleccionado
+      * @param event
+      */
      @FXML
      void click_Producto(MouseEvent event) {
     	//Comprobar que hay seleccionado un objeto en la tabla
@@ -173,6 +196,10 @@ public class EjercicioExamControllerTabla implements Initializable{
     	 
      }
      
+     /**
+      * Actualizar datos del producto
+      * @param event
+      */
      @FXML
      void actualizar(ActionEvent event) {
     	//Comprobar que hay seleccionado un objeto en la tabla
@@ -233,6 +260,10 @@ public class EjercicioExamControllerTabla implements Initializable{
  		}
      }
 
+     /**
+      * Ventana de ayuda, acerca de...
+      * @param event
+      */
      @FXML
      void ayuda(ActionEvent event) {
     	//Ventana de informacion
@@ -243,6 +274,10 @@ public class EjercicioExamControllerTabla implements Initializable{
         alert.showAndWait();
      }
 
+     /**
+      * Borrar Producto
+      * @param event
+      */
      @FXML
      void borrar(ActionEvent event) {
     	//Comprobar que hay seleccionado una persona en la tabla
@@ -274,6 +309,10 @@ public class EjercicioExamControllerTabla implements Initializable{
  		}
      }
 
+     /**
+      * Crear producto
+      * @param event
+      */
      @FXML
      void crear(ActionEvent event) {
     	//Comprobar que en un numero
@@ -330,6 +369,10 @@ public class EjercicioExamControllerTabla implements Initializable{
  		}
      }
 
+     /**
+      * Limpiar datos
+      * @param event
+      */
      @FXML
      void limpiar(ActionEvent event) {
     	 txtCodigo.setText("");
@@ -343,6 +386,10 @@ public class EjercicioExamControllerTabla implements Initializable{
     	 
      }
 
+     /**
+      * Ver imagen en una ventana
+      * @param event
+      */
      @FXML
      void verImagen(ActionEvent event) {
     	//Comprobar que hay seleccionado un objeto en la tabla
@@ -385,7 +432,7 @@ public class EjercicioExamControllerTabla implements Initializable{
      }
      
      /**
-      * 
+      * Seleccionar imagen
       * @param event
       */
 	 @FXML
