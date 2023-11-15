@@ -14,6 +14,14 @@ public class ProductoDao {
 
 	private ConexionBD conexion;
 	
+	/**
+	 * Insertar Producto
+	 * @param codigo
+	 * @param nombre
+	 * @param precio
+	 * @param disponible
+	 * @param imagen
+	 */
 	public void insertProducto(String codigo, String nombre, Double precio, int disponible, InputStream imagen) {
     	//Inserta objeto en la BBDD
     	try {
@@ -37,6 +45,14 @@ public class ProductoDao {
 	    }
     }
 	
+	/**
+	 * Modificar Producto
+	 * @param codigo
+	 * @param nombre
+	 * @param precio
+	 * @param disponible
+	 * @param imagen
+	 */
 	public void modProducto(String codigo, String nombre, Double precio, int disponible, InputStream imagen) {
     	//Modifica objeto en la BBDD
     	try {
@@ -55,6 +71,10 @@ public class ProductoDao {
 	    }
     }
 	
+	/**
+	 * Eliminar Producto
+	 * @param codigo
+	 */
 	public void elimProducto(String codigo) {
     	//Eliminar objeto en la BBDD
     	try {
@@ -68,6 +88,11 @@ public class ProductoDao {
 	    }
     }
 	
+	/**
+	 * Cargar imagen
+	 * @param codigo
+	 * @return
+	 */
 	public InputStream cargarImg(String codigo)  {
 		InputStream image = null;
 		try {
@@ -85,6 +110,10 @@ public class ProductoDao {
         return image;    
     }
 	
+	/**
+	 * Cargar Productos
+	 * @return
+	 */
 	public ObservableList<Producto> cargarProductos()  {
     	
     	ObservableList<Producto> producto = FXCollections.observableArrayList();

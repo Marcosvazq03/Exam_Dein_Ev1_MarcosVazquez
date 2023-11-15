@@ -12,6 +12,14 @@ public class Producto {
 	private int disponible;
 	private InputStream image;
 	
+	/**
+	 * Crear Producto
+	 * @param codigo
+	 * @param nombre
+	 * @param precio
+	 * @param disponible
+	 * @param img
+	 */
 	public Producto(String codigo, String nombre, Double precio, int disponible, InputStream img) {
 		this.codigo=codigo;
 		this.nombre=nombre;
