@@ -183,7 +183,7 @@ public class EjercicioExamControllerTabla implements Initializable{
   			imageSelected.setImage(null);
   			cbDisponible.setSelected(false);
   			if (p.getImage()!=null) {
-				imageSelected.setImage(new Image(p.getImage()));
+				imageSelected.setImage(new Image(aD.cargarImg(p.getCodigo())));
 				imageBinary = p.getImage();
 			}
   			if (p.getDisponible()==1) {

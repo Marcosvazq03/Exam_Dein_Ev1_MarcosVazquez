@@ -68,6 +68,23 @@ public class ProductoDao {
 	    }
     }
 	
+	public InputStream cargarImg(String codigo)  {
+		InputStream image = null;
+		try {
+            conexion = new ConexionBD();        	
+        	String consulta = "select imagen from productos WHERE codigo = "+codigo;
+        	PreparedStatement pstmt = conexion.getConexion().prepareStatement(consulta);      
+        	ResultSet rs = pstmt.executeQuery();   
+        	rs.next();
+        	image = rs.getBinaryStream("imagen");          
+			rs.close();       
+	        conexion.CloseConexion();
+	    } catch (SQLException e) {	    	
+	    	e.printStackTrace();
+	    }    
+        return image;    
+    }
+	
 	public ObservableList<Producto> cargarProductos()  {
     	
     	ObservableList<Producto> producto = FXCollections.observableArrayList();
